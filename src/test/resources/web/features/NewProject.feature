@@ -11,7 +11,7 @@ Scenario: Creacion de un nuevo proyecto
 When clickeo sobre el boton "CREATE NEW PROJECT"
 And nombro mi proyecto "NuevoProyecto"
 And clickeo el boton "CREATE"
-Then se valida que se haya creado un nuevo proyecto
+Then se crea un nuevo "proyecto"
 
 @NewProjectExitoso @StatusPrivate
 Scenario: Creacion de un nuevo proyecto en modo privado

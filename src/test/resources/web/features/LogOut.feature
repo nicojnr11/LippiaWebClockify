@@ -6,6 +6,7 @@
 
     @LogOutExitoso @Smoke
     Scenario: Log Out exitoso
-      When clickeo el boton superior derecho de "MiCuenta"
+      When estoy en la seccion de pantalla principal
+      And clickeo el boton "My Account"
       And clickeo el boton "Log Out"
       Then se cierra mi sesion de clockify

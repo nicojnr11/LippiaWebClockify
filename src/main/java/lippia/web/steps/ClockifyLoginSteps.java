@@ -17,7 +17,7 @@ public class ClockifyLoginSteps extends PageSteps {
     @When("^The client login with credentials email (.*) and password (.*)$")
     public void login(String email, String password) {
         ClockifyLoginService.enterLoginPage();
-        ClockifyLoginService.login(email,password);
+        ClockifyLoginService.login(email, password);
     }
 
     @Then("The client verify clockify home page is displayed")
@@ -25,3 +25,5 @@ public class ClockifyLoginSteps extends PageSteps {
         ClockifyLoginService.verifyMessage();
     }
 }
+
+
