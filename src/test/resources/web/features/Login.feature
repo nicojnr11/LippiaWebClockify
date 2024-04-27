@@ -8,8 +8,7 @@ And el sitio cambia a la seccion de log in
 
 @TestLogInExitoso @LogInManually @Smoke 
 Scenario:Me logueo manualmente con un e-mail y una contraseña validos
-When estoy en la seccion de Log In
-And clickeo el boton "Log in manually"
+When clickeo el boton " Log in manually "
 And ingreso un "email" y un "password"
 And clickeo el boton "LOG IN"
 Then soy redirigido la pagina principal de clockify

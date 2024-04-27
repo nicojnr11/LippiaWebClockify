@@ -3,32 +3,36 @@ package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
+import lippia.web.constants.LandingPageConstants;
 import lippia.web.constants.LogInConstants;
 import lippia.web.constants.MyAccountConstants;
 import org.testng.Assert;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
-import static com.crowdar.core.actions.ActionManager.isVisible;
 
 public class LogInService extends ActionManager {
     public static void urlBase() {
-        WebActionManager.navigateTo(PropertyManager.getProperty("web.base.url"));
+        navigateTo(PropertyManager.getProperty("web.base.url"));
     }
 
     public static void LogInLandingPage(String logIn) {
-        WebActionManager.navigateTo("https://app.clockify.me/en/login");
+        navigateTo("https://app.clockify.me/en/login");
+    }
+
+    public static void logInLandingPage(String logInlandingPage){
+       click(LandingPageConstants.LOG_IN_BUTTON);
     }
 
     public static void logInManuallyButton(String logInManually) {
-        WebActionManager.click(LogInConstants.LOG_IN_MANUALLY_BUTTON);
+        click(LogInConstants.LOG_IN_MANUALLY_BUTTON,logInManually);
     }
 
     public static void usuarioyPassword(String usuario, String password) {
         WebActionManager.setInput(LogInConstants.INPUT_EMAIL_NAME, usuario);
-        WebActionManager.navigateTo(PropertyManager.getProperty("clocky.user"));
+        navigateTo(PropertyManager.getProperty("clocky.user"));
 
         WebActionManager.setInput(LogInConstants.INPUT_PASSWORD_NAME, password);
-        WebActionManager.navigateTo(PropertyManager.getProperty("clocky.password"));
+        navigateTo(PropertyManager.getProperty("clocky.password"));
 
     }
 

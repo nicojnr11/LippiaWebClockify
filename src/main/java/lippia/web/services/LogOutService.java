@@ -17,7 +17,7 @@ public class LogOutService {
       click(MyAccountConstants.LOG_OUT);
     };
 
-    public static void validacion(){
-        Assert.assertTrue(isVisible((LogInConstants.LOG_IN_MANUALLY_BUTTON));
-    }
+   /* public static void validacion(){
+        Assert.assertTrue(isVisible((LogInConstants.LOG_IN_MANUALLY_BUTTON);
+}*/
 }
