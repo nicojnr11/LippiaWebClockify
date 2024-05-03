@@ -2,11 +2,13 @@
   Feature: LogOut en clockify
 
   Background:
-    Given me encuentro el en home de usuarios logueado con una cuenta valida
+    Given estoy en la landing page de clockify
+    And clickeo el boton Log in
+    And clickeo el boton " Log in manually "
+    And ingreso un "email", un "password" y clikeo el boton Log In
 
     @LogOutExitoso @Smoke
     Scenario: Log Out exitoso
-      When estoy en la seccion de pantalla principal
-      And clickeo el boton "My Account"
-      And clickeo el boton "Log Out"
+      When clickeo el boton "AG"
+      And clickeo el boton " Log out "
       Then se cierra mi sesion de clockify

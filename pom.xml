@@ -26,7 +26,7 @@
 	<properties>
 		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		<buidIdetifier>ariadna_garcia_${maven.build.timestamp}</buidIdetifier>
 		<!-- defult configuration chrome local -->
 		<crowdar.projectType></crowdar.projectType>
 		<crowdar.driver.capabilities.json_path></crowdar.driver.capabilities.json_path>
@@ -37,14 +37,14 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@TestLogInExitoso</cucumber.tags>
+		<cucumber.tags>@NewProjectExitoso1</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>https://clockify.me/es</web-app.url>
+		<web-app.url>https://clockify.me/en</web-app.url>
 
 	</properties>
 	<profiles>

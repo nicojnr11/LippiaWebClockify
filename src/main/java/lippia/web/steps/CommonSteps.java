@@ -1,5 +1,6 @@
 package lippia.web.steps;
 
+import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,13 +13,10 @@ public class CommonSteps {
         LogInService.urlBase();
     }
 
-    @Given("me encuentro el en home de usuarios logueado con una cuenta valida")
-    public void meEncuentroElEnHomeDeUsuariosLogueadoConUnaCuentaValida() {
+
+    @Given("me encuentro el en home de usuarios logueado con un {string} y {string} validos")
+    public void meEncuentroElEnHomeDeUsuariosLogueadoConUnYValidos(String usuario, String password) {
+        WebActionManager.navigateTo("https://app.clockify.me/en/login");
+        LogInService.usuarioyPassword(usuario,password);
     }
-
-
-    @Then("se crea un nuevo {string}")
-    public void seCreaUnNuevo(String arg0) {
-    }
-
 }

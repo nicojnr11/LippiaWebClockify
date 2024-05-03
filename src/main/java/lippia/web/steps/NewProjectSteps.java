@@ -3,28 +3,18 @@ package lippia.web.steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lippia.web.services.LogInService;
 import lippia.web.services.LogOutService;
+import lippia.web.services.NewProjectService;
 
 public class NewProjectSteps {
 
-
-
-    @And("clickeo el boton (.*)$")
-    public void clickeoElBoton(){
-        LogOutService.exitMyAccount();
-    }
-
-    @When("clickeo sobre el boton {string}")
-    public void clickeoSobreElBoton(String arg0) {
-        
-        
-    }
-
     @And("nombro mi proyecto {string}")
-    public void nombroMiProyecto(String arg0) {
+    public void nombroMiProyecto(String NuevoProyecto) {
+        NewProjectService.nombreDeNuevoProyecto(NuevoProyecto);
     }
 
-    @Then("valido que se haya creado un nuevo {string}")
-    public void validoQueSeHayaCreadoUnNuevo(String arg0) {
+    @Then("se crea un nuevo {string}")
+    public void seCreaUnNuevo(String arg0) {
     }
 }
