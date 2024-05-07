@@ -1,9 +1,9 @@
 package lippia.web.services;
 
-import com.crowdar.core.PropertyManager;
-import gherkin.deps.net.iharder.Base64;
-import io.lippia.api.lowcode.variables.PropertiesManager;
+import com.crowdar.core.actions.WebActionManager;
+import lippia.web.constants.CommonConstants;
 import lippia.web.constants.LogInConstants;
+import org.testng.Assert;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -34,17 +34,16 @@ public class BasicFunctionsService {
         try {
             input = BasicFunctionsService.class.getClassLoader().getResourceAsStream("config.properties");
 
-            // Cargar el archivo de propiedades
             properties.load(input);
 
             usuario = properties.getProperty("clocky.user");
             password = properties.getProperty("clocky.password");
 
-            setInput(LogInConstants.INPUT_EMAIL_NAME,usuario);
-            setInput(LogInConstants.INPUT_PASSWORD_NAME,password);
+            setInput(LogInConstants.INPUT_EMAIL_NAME, usuario);
+            setInput(LogInConstants.INPUT_PASSWORD_NAME, password);
 
         } catch (Exception e) {
-            e.printStackTrace(); // Manejo de excepciones según tus necesidades
+            e.printStackTrace();
         } finally {
             if (input != null) {
                 try {
@@ -57,17 +56,20 @@ public class BasicFunctionsService {
         }
     }
 
-    public static String getRandomString(int length) {
-        Random RANDOM = new Random();
 
+    public static String getRandomString2(int length) {
+        Random random = new Random();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            // Genera un carácter aleatorio entre 'a' y 'z'
-            char c = (char) (RANDOM.nextInt(26) + 'a');
+            char c = (char) (random.nextInt(26) + 'a');
             sb.append(c);
         }
         return sb.toString();
     }
+
+
+    public static void validCheck(String chek) {
+        Assert.assertTrue(WebActionManager.isPresent(CommonConstants.VALID_MESSAGE_XPATH),chek);
+
+    }
 }
-
-

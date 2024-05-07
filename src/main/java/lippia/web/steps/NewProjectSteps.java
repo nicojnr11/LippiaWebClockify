@@ -9,7 +9,7 @@ import lippia.web.services.NewProjectService;
 
 public class NewProjectSteps {
 
-    @And("nombro mi proyecto {string}")
+    @And("nombro mi proyecto (.*)$")
     public void nombroMiProyecto(String NuevoProyecto) {
         NewProjectService.nombreDeNuevoProyecto(NuevoProyecto);
     }

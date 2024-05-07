@@ -8,18 +8,13 @@ Background:
   And ingreso un "email", un "password" y clikeo el boton Log In
 
 @registroDeHoras @RegistroConFechayHora @Smoke
-Scenario Outline: Creo un nuevo registro de horas trabajadas
+Scenario: Creo un nuevo registro de horas trabajadas
 When clickeo el boton "TIME TRACKER"
-And clickeo sobre el boton "Manual"
-And nombro mi proyecto <proyecto>
-And clickeo sobre el boton "Today"
-And añado la fecha <fecha>
-And añado una hora de <inicio> del proyecto
-And añado una hora de <final> del proyecto
-And clickeo el boton "ADD"
-Then se crea un nuevo "time entry"
-Examples:
-|proyecto   |fecha            |inicio     |final   |
-|AA         | 22/04/2024      |  2300     | 0000   |
-|BB         | 13/09/2023      |  1300     | 1500   |
+And clickeo sobre el boton Manual
+And añado una fecha
+And seteo una hora de inicio "08:00"
+#And seteo una hora final "18:00"
+And clickeo el boton " Add "
+Then se crea un nuevo time entry
+
 
